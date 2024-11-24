@@ -1,0 +1,28 @@
+{% extends 'organization/base.html' %}
+
+{% block content %}
+<h1>Tasks</h1>
+<a href="{% url 'task_create' %}" class="btn btn-primary mb-3">Create Task</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>SNo</th>
+            <th>Task</th>
+            <th>Username</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for details in task %}
+        <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ details.task_detail }}</td>
+            <td>{{ details.username }}</td>
+            <td>
+                <a href="{% url 'task_update' details.id %}" class="btn btn-warning btn-sm">Edit</a>
+                <a href="{% url 'task_delete' details.id %}" class="btn btn-danger btn-sm">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

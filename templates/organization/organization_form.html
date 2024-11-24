@@ -1,0 +1,18 @@
+{% extends 'organization/base.html' %}
+
+{% block content %}
+<h2>Organization Creation/Update</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-success">Save</button>
+    <a href="{% url 'organization_list' %}" class="btn btn-secondary">Cancel</a>
+</form>
+{% endblock %}
+
+
+{% comment %} <form action="" method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit">Submit</button>
+</form> {% endcomment %}

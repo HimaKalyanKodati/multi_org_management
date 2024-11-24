@@ -1,0 +1,4 @@
+organizations/__pycache__/
+organizations/migrations/
+multi_org_management/__pycache__/
+db.sqlite3
